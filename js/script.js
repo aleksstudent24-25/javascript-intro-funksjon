@@ -40,6 +40,7 @@ Dette skjer hver gang loopen kjøres:
 */
 
 function showImgs() {
+  disco();
   let idNum = 1;
   imageUrls.map((url) => {
     const newImage = document.createElement("img");
@@ -51,12 +52,29 @@ function showImgs() {
   });
 
   galleryBtn.setAttribute("onclick", "randomise();");
+  galleryBtn.textContent = "BOHAHAAHAHAHAHAHAHAHAHHAAHHAHAHA";
   mainImage.setAttribute("onclick", "randomise();");
 }
 
 function randomise() {
   for (let i = 1; i <= imageUrls.length; i++) {
-    const rndNum = Math.floor(Math.random() * imageUrls.length);
-    document.getElementById(`pic${i}`).src = imageUrls[rndNum];
+    document.getElementById(`pic${i}`).src = "../images/scary.jpg";
+    //   const rndNum = Math.floor(Math.random() * imageUrls.length);
+    //   document.getElementById(`pic${i}`).src = imageUrls[rndNum];
   }
+}
+
+function disco() {
+  mainImage.src = "../images/scary.jpg";
+  setInterval(() => {
+    if (
+      !document.body.classList.contains("light") &&
+      !document.body.classList.contains("dark")
+    ) {
+      document.body.classList.toggle("light");
+    } else {
+      document.body.classList.toggle("light");
+      document.body.classList.toggle("dark");
+    }
+  }, 250);
 }

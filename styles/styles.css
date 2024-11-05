@@ -36,7 +36,7 @@ body {
   height: 100px;
 }
 
-#content img:hover {
+#img:hover {
   cursor: pointer;
 }
 
@@ -46,4 +46,13 @@ body {
 
 #gallery-button:active {
   cursor: grabbing;
+}
+
+body.light {
+  background-color: rgb(27, 26, 26);
+}
+
+body.dark {
+  opacity: 50%;
+  background-color: black;
 }
